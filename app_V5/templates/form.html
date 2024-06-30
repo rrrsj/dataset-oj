@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+        {% for title in title_list %}
+            <th>{{title.title}}</th>
+        {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for line in line_list %}
+        <tr>
+            <th scope="row">line</th>
+            {% for content in line %}
+                <td>{{content.content}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<link href="/static/css/bootstrap.css" rel="stylesheet">
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/request_socket.js"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script src="/static/js/check_cookie.js"></script>
+<script src="/static/js/add_page_list.js"></script>
+<script>
+
+    window.onload = function(){
+    check_cookie();
+};
+</script>
+</body>
+</html>
